@@ -10,7 +10,7 @@ public class App extends JFrame {
         mainFrame.setSize(400, 300);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        mainFrame.setLayout(new GridLayout(3, 1, 10, 10)); // (rows, cols, hgap, vgap)
+        mainFrame.setLayout(new GridLayout(5, 5, 10, 10)); // (rows, cols, hgap, vgap)
 
         JPanel topPanel = new JPanel();
         JButton GenerateButton = new JButton ("generate");
@@ -22,10 +22,6 @@ public class App extends JFrame {
         topPanel2.add(GenerateButton2);
         mainFrame.add(topPanel2);
 
-        String[] choices = { "Verb","Adjective", "Noun",};
-        final JComboBox<String> cb = new JComboBox<String>(choices);
-        cb.setVisible(true);
-        topPanel2.add(cb);
 
         JPanel centralPanel = new JPanel();
         JTextField WTypePanel = new JTextField(10);
@@ -33,9 +29,16 @@ public class App extends JFrame {
         mainFrame.add(centralPanel);
 
         JPanel bottomPanel = new JPanel();
-        JTextField Instructions = new JTextField("Enter Your New Word in the Text Box to the Left", 30);
+        JTextField Instructions = new JTextField("Enter Your New Word in the Text Box to the above", 30);
         bottomPanel.add(Instructions);
         mainFrame.add(bottomPanel);
+         
+         String[] choices = { "Verb","Adjective", "Noun",};
+
+            final JComboBox<String> cb = new JComboBox<String>(choices);
+
+            cb.setVisible(true);
+            topPanel2.add(cb);
 
 
         GenerateButton2.addActionListener(new ActionListener() {
@@ -43,8 +46,7 @@ public class App extends JFrame {
             public void actionPerformed(ActionEvent e) {
             String selectedChoice = (String) cb.getSelectedItem();
             String newWord = WTypePanel.getText(); // gets the text from the TextField component
-            IInstructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
-        } 
+            Instructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
         }
     });
 
@@ -52,4 +54,4 @@ public class App extends JFrame {
    }
 
 }
-
+     
