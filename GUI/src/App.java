@@ -22,6 +22,10 @@ public class App extends JFrame {
         topPanel2.add(GenerateButton2);
         mainFrame.add(topPanel2);
 
+        String[] choices = { "Verb","Adjective", "Noun",};
+        final JComboBox<String> cb = new JComboBox<String>(choices);
+        cb.setVisible(true);
+        topPanel2.add(cb);
 
         JPanel centralPanel = new JPanel();
         JTextField WTypePanel = new JTextField(10);
@@ -37,8 +41,10 @@ public class App extends JFrame {
         GenerateButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+            String selectedChoice = (String) cb.getSelectedItem();
             String newWord = WTypePanel.getText(); // gets the text from the TextField component
-            Instructions.setText(newWord + " Has been added"); // updates the message on the label
+            IInstructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
+        } 
         }
     });
 
