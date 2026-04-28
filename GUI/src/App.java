@@ -17,10 +17,18 @@ public class App extends JFrame {
         topPanel.add(GenerateButton);
         mainFrame.add(topPanel);
 
+        JPanel sentencePanel = new JPanel();
+        JLabel sentenceLabel = new JLabel("Your Sentence will appear here");
+        sentencePanel.add(sentenceLabel);
+        mainFrame.add(sentencePanel);
+
         JPanel topPanel2 = new JPanel();
         JButton GenerateButton2 = new JButton ("Add");
         topPanel2.add(GenerateButton2);
         mainFrame.add(topPanel2);
+
+        JButton GenerateButton3 = new JButton ("Remove");
+        topPanel2.add(GenerateButton3);
 
 
         JPanel centralPanel = new JPanel();
@@ -29,11 +37,12 @@ public class App extends JFrame {
         mainFrame.add(centralPanel);
 
         JPanel bottomPanel = new JPanel();
-        JTextField Instructions = new JTextField("Enter Your New Word in the Text Box to the above", 30);
+        JLabel Instructions = new JLabel("Enter Your New Word or word you want to remove in the Text Box to the above");
         bottomPanel.add(Instructions);
         mainFrame.add(bottomPanel);
-         
-         String[] choices = { "Verb","Adjective", "Noun",};
+
+
+        String[] choices = { "Verb","Adjective", "Noun",};
 
             final JComboBox<String> cb = new JComboBox<String>(choices);
 
@@ -50,8 +59,24 @@ public class App extends JFrame {
         }
     });
 
+    GenerateButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            String selectedChoice = (String) cb.getSelectedItem();
+            String newWord = WTypePanel.getText(); // gets the text from the TextField component
+            Instructions.setText(newWord + " (" + selectedChoice + ") has been removed"); // updates the message on the label
+            }
+        });
+    GenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            String newSentence = "";
+            sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
+        }
+    });
+
       mainFrame.setVisible(true); // this must be the last statement
-   }
+    }
 
 }
-     
+
