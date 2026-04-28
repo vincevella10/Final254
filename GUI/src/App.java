@@ -3,12 +3,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+
 public class App extends JFrame {
     public static void main(String[] args) throws Exception {
         JFrame mainFrame = new JFrame();
         mainFrame.setTitle("Welcome");
         mainFrame.setSize(400, 300);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      Color lightBlue = new Color(173, 216, 230);
+        mainFrame.setBackground(lightBlue);
+   
 
         mainFrame.setLayout(new GridLayout(5, 5, 10, 10)); // (rows, cols, hgap, vgap)
 
@@ -74,9 +78,13 @@ public class App extends JFrame {
             sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
         }
     });
-
+      mainFrame.getContentPane().setBackground(lightBlue);
+      topPanel.setBackground(lightBlue);
+      topPanel2.setBackground(lightBlue);
+      centralPanel.setBackground(lightBlue);
+      bottomPanel.setBackground(lightBlue);
+      sentencePanel.setBackground(lightBlue);
       mainFrame.setVisible(true); // this must be the last statement
     }
 
 }
-
