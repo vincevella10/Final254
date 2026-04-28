@@ -21,6 +21,7 @@ public class RandomSentence {
         nouns.add("Worker");
         nouns.add("Monkey");
         verbs.add("Throws");
+        verbs.add("Busts");
         verbs.add("Looks");
         articles.add("the");
         articles.add("a");
