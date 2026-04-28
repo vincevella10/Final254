@@ -20,7 +20,6 @@ public class RandomSentence {
         nouns.add("kid");
         nouns.add("Worker");
         nouns.add("Monkey");
-        verbs.add("Busts");
         verbs.add("Throws");
         verbs.add("Looks");
         articles.add("the");
