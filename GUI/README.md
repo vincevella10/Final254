@@ -17,4 +17,6 @@ This project teaches the basics of Swing
 ### Basic Functionality
 
 [Copy of RandomSentences.drawio (2).pdf](https://github.com/user-attachments/files/27147529/Copy.of.RandomSentences.drawio.2.pdf)
-<img width="959" height="566" alt="GUI_FinalProject_VinceVella" src="https://github.com/user-attachments/assets/d1fa6c40-841d-4b92-abf1-b9d93b2df4c9" />
+\
+<img width="1919" height="1128" alt="Screenshot 2026-04-29 090904" src="https://github.com/user-attachments/assets/9734a417-6f30-43dd-af55-83af06d63a3e" />
+
