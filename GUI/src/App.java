@@ -7,7 +7,7 @@ import javax.swing.*;
 public class App extends JFrame {
     public static void main(String[] args) throws Exception {
         JFrame mainFrame = new JFrame();
-        mainFrame.setTitle("Welcome");
+        mainFrame.setTitle("Welcome to Dane and Vince's Random Sentence Generator!");
         mainFrame.setSize(400, 300);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Color lightBlue = new Color(173, 216, 230);
