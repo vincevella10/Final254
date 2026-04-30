@@ -1,4 +1,6 @@
 ## Final Project
+### Author: Vince Vella
+### Author: Dane Andreasen
 
 Welcome to Dane and Vince's Random Sentence Generating
 
@@ -13,8 +15,8 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 This project teaches the basics of Swing
 
-## How To Use The Program
-### Basic Functionality
+## How To Use The Program: Add Nouns, Verbs, or adjectives. Press generate to make a random sentence. 
+### Basic Functionality: Generates a random sentence
 
 [Copy of RandomSentences.drawio (2).pdf](https://github.com/user-attachments/files/27147529/Copy.of.RandomSentences.drawio.2.pdf)
 \
