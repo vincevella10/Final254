@@ -19,7 +19,4 @@ This project teaches the basics of Swing
 [Copy of RandomSentences.drawio (2).pdf](https://github.com/user-attachments/files/27147529/Copy.of.RandomSentences.drawio.2.pdf)
 \
 <img width="1919" height="1128" alt="Screenshot 2026-04-29 090904" src="https://github.com/user-attachments/assets/9734a417-6f30-43dd-af55-83af06d63a3e" />
-<<<<<<< HEAD
 
-=======
->>>>>>> de23b86a942fc90704a68c6d5b970582ae823886
