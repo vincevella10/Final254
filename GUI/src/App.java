@@ -10,7 +10,7 @@ public class App extends JFrame {
         mainFrame.setTitle("Welcome");
         mainFrame.setSize(400, 300);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      Color lightBlue = new Color(173, 216, 230);
+        Color lightBlue = new Color(173, 216, 230);
         mainFrame.setBackground(lightBlue);
    
 
@@ -48,10 +48,10 @@ public class App extends JFrame {
 
         String[] choices = { "Verb","Adjective", "Noun",};
 
-            final JComboBox<String> cb = new JComboBox<String>(choices);
+        final JComboBox<String> cb = new JComboBox<String>(choices);
 
-            cb.setVisible(true);
-            topPanel2.add(cb);
+        cb.setVisible(true);
+        topPanel2.add(cb);
 
 
         GenerateButton2.addActionListener(new ActionListener() {
