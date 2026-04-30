@@ -12,7 +12,7 @@ public class App extends JFrame {
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Color lightBlue = new Color(173, 216, 230);
         mainFrame.setBackground(lightBlue);
-   
+
 
         mainFrame.setLayout(new GridLayout(5, 5, 10, 10)); // (rows, cols, hgap, vgap)
 
@@ -57,34 +57,48 @@ public class App extends JFrame {
         GenerateButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            String selectedChoice = (String) cb.getSelectedItem();
-            String newWord = WTypePanel.getText(); // gets the text from the TextField component
-            Instructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
+                try{
+                    String selectedChoice = (String) cb.getSelectedItem();
+                    String newWord = WTypePanel.getText(); // gets the text from the TextField component
+                    //if (newWord.matches("\\d+")) { // regex: only digits
+                       // throw new NumberEx("Numbers are not allowed"); // throws the custom exception if the input is a number
+                   // }
+                    Instructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
+                    } catch (Exception exept) {
+                    JOptionPane.showMessageDialog(mainFrame, "Error: Please enter words not numbers."); // updates the message on the label with an error message
+            }
         }
     });
 
-    GenerateButton3.addActionListener(new ActionListener() {
+        GenerateButton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            String selectedChoice = (String) cb.getSelectedItem();
-            String newWord = WTypePanel.getText(); // gets the text from the TextField component
-            Instructions.setText(newWord + " (" + selectedChoice + ") has been removed"); // updates the message on the label
+                try{
+                    String selectedChoice = (String) cb.getSelectedItem();
+                    String newWord = WTypePanel.getText(); // gets the text from the TextField component
+                    Instructions.setText(newWord + " (" + selectedChoice + ") has been removed"); // updates the message on the label
+                    } catch (Exception exept) {
+                JOptionPane.showMessageDialog(mainFrame, "Error: Please enter a valid word to remove."); // updates the message on the label with an error message
+            }
+        }
+        });
+        GenerateButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                String newSentence = "";
+                sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
             }
         });
-    GenerateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            String newSentence = "";
-            sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
+        mainFrame.getContentPane().setBackground(lightBlue);
+        topPanel.setBackground(lightBlue);
+        topPanel2.setBackground(lightBlue);
+        centralPanel.setBackground(lightBlue);
+        bottomPanel.setBackground(lightBlue);
+        sentencePanel.setBackground(lightBlue);
+        mainFrame.setVisible(true); // this must be the last statement
         }
-    });
-      mainFrame.getContentPane().setBackground(lightBlue);
-      topPanel.setBackground(lightBlue);
-      topPanel2.setBackground(lightBlue);
-      centralPanel.setBackground(lightBlue);
-      bottomPanel.setBackground(lightBlue);
-      sentencePanel.setBackground(lightBlue);
-      mainFrame.setVisible(true); // this must be the last statement
-    }
 
 }
+
+//JOptionPane.showMessageDialog(null, "Your Sentence is: " + newSentence);
+//showMessageDialog(null, "Your Sentence is: " + newSentence); for error message
