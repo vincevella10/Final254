@@ -17,13 +17,16 @@ public class RandomSentence {
         prepositions = new ArrayList<String>();
 
         // Initialize the lists with some default words
-        nouns.add("cat");
-        nouns.add("dog");
-        verbs.add("runs");
-        verbs.add("jumps");
+        nouns.add("kid");
+        nouns.add("Worker");
+        nouns.add("Monkey");
+        verbs.add("Throws");
+        verbs.add("Busts");
+        verbs.add("Looks");
         articles.add("the");
         articles.add("a");
         prepositions.add("over");
         prepositions.add("under");
-    }
+        prepositions.add("Ontop");
+    } 
 }

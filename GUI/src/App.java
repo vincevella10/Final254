@@ -10,11 +10,8 @@ public class App extends JFrame {
         mainFrame.setTitle("Welcome");
         mainFrame.setSize(400, 300);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Color lightBlue = new Color(173, 216, 230);
-        mainFrame.setBackground(lightBlue);
-   
 
-        mainFrame.setLayout(new GridLayout(5, 5, 10, 10)); // (rows, cols, hgap, vgap)
+        mainFrame.setLayout(new GridLayout(3, 1, 10, 10)); // (rows, cols, hgap, vgap)
 
         JPanel topPanel = new JPanel();
         JButton GenerateButton = new JButton ("generate");
@@ -41,17 +38,9 @@ public class App extends JFrame {
         mainFrame.add(centralPanel);
 
         JPanel bottomPanel = new JPanel();
-        JLabel Instructions = new JLabel("Enter your new word or a word you want to remove in the Text Box to the above");
+        JTextField Instructions = new JTextField("Enter Your New Word in the Text Box to the Left", 30);
         bottomPanel.add(Instructions);
         mainFrame.add(bottomPanel);
-
-
-        String[] choices = { "Verb","Adjective", "Noun",};
-
-        final JComboBox<String> cb = new JComboBox<String>(choices);
-
-        cb.setVisible(true);
-        topPanel2.add(cb);
 
 
         GenerateButton2.addActionListener(new ActionListener() {
@@ -63,28 +52,8 @@ public class App extends JFrame {
         }
     });
 
-    GenerateButton3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            String selectedChoice = (String) cb.getSelectedItem();
-            String newWord = WTypePanel.getText(); // gets the text from the TextField component
-            Instructions.setText(newWord + " (" + selectedChoice + ") has been removed"); // updates the message on the label
-            }
-        });
-    GenerateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            String newSentence = "";
-            sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
-        }
-    });
-        mainFrame.getContentPane().setBackground(lightBlue);
-        topPanel.setBackground(lightBlue);
-        topPanel2.setBackground(lightBlue);
-        centralPanel.setBackground(lightBlue);
-        bottomPanel.setBackground(lightBlue);
-        sentencePanel.setBackground(lightBlue);
-        mainFrame.setVisible(true); // this must be the last statement
-    }
+      mainFrame.setVisible(true); // this must be the last statement
+   }
 
 }
+
