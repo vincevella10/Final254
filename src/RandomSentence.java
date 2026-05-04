@@ -56,6 +56,21 @@ public String generateSentence() {
         return sentence.toString();
     }
 
+    public void addNoun(String noun) {
+        nouns.add(noun);
+    }
+
+    public void addVerb(String verb) {
+        verbs.add(verb);
+    }
+
+    public void addArticle(String article) {
+        articles.add(article);
+    }
+
+    public void removeNoun(String noun) {
+        nouns.remove(noun);
+    }
     public ArrayList<String> getNoun() {
         return nouns;
     }
