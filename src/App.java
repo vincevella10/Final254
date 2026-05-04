@@ -1,6 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        menu();
+        RandomSentence rs = new RandomSentence();
+
+        System.out.println(rs.generateSentence());
     }
 
 

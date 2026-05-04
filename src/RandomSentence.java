@@ -1,31 +1,75 @@
 
-import java.lang.reflect.Array;
-java.util.ArrayList;
-java.util.Random;
-java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Random;
 public class RandomSentence {
-
     private ArrayList<String> nouns;
     private ArrayList<String> verbs;
     private ArrayList<String> articles;
     private ArrayList<String> prepositions;
 
     RandomSentence() {
-        nouns = new ArrayList<String>();
-        verbs = new ArrayList<String>();
-        articles = new ArrayList<String>();
-        prepositions = new ArrayList<String>();
+        this.nouns = new ArrayList<String>();
+        this.verbs = new ArrayList<String>();
+        this.articles = new ArrayList<String>();
+        this.prepositions = new ArrayList<String>();
 
         // Initialize the lists with some default words
         nouns.add("kid");
-        nouns.add("Worker");
-        nouns.add("Monkey");
-        verbs.add("Throws");
-        verbs.add("Looks");
+        nouns.add("worker");
+        nouns.add("monkey");
+        verbs.add("jumps");
+        verbs.add("looks");
         articles.add("the");
         articles.add("a");
         prepositions.add("over");
         prepositions.add("under");
-        prepositions.add("Ontop");
+        prepositions.add("on top of");
     }
+
+public String generateSentence() {
+    Random rand = new Random();
+
+    String wordNoun = nouns.get(rand.nextInt(nouns.size()));
+    String wordVerb = verbs.get(rand.nextInt(verbs.size()));
+    String wordArticle = articles.get(rand.nextInt(articles.size()));
+    String wordPrep = prepositions.get(rand.nextInt(prepositions.size()));
+    String wordNoun2 = nouns.get(rand.nextInt(nouns.size()));
+    String wordArticle2 = articles.get(rand.nextInt(articles.size()));
+    return wordArticle + " " + wordNoun + " " + wordVerb + " " + wordPrep + " " + wordArticle2 + " " + wordNoun2;
+}
+    public void setNouns(ArrayList<String> nouns) {
+        this.nouns = nouns;
+    }
+    public void setVerbs(ArrayList<String> verb) {
+        this.verbs = verb;
+    }
+    public void setArticles(ArrayList<String> articles) {
+        this.articles = articles;
+    }
+    public void setPrepositions(ArrayList<String> prepositions) {
+        this.prepositions = prepositions;
+    }
+
+    public String getString(){
+        StringBuilder sentence = new StringBuilder();
+        sentence.append(this.articles).append(" ").append(this.nouns).append(" ").append(this.verbs).append(" ").append(this.prepositions).append(" ").append(this.articles).append(" ").append(this.nouns);
+        return sentence.toString();
+    }
+
+    public ArrayList<String> getNoun() {
+        return nouns;
+    }
+
+    public ArrayList<String> getVerb() {
+        return verbs;
+    }
+
+    public ArrayList<String> getArticle() {
+        return articles;
+    }
+
+    public ArrayList<String> getPreposition() {
+        return prepositions;
+    }
+
 }
