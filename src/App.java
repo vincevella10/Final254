@@ -98,7 +98,7 @@ public class App extends JFrame {
         GenerateButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                String newSentence = rs.generateSentence(); // generates a new sentence using the RandomSentence class
+                StringBuilder newSentence = rs.generateSentence(); // generates a new sentence using the RandomSentence class
                 sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
             }
         });

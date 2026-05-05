@@ -7,6 +7,7 @@ public class RandomSentence {
     private ArrayList<String> articles;
     private ArrayList<String> prepositions;
     private ArrayList<String> adjectives;
+    private Random randWord = new Random();
 
     RandomSentence() {
         this.nouns = new ArrayList<String>();
@@ -31,8 +32,7 @@ public class RandomSentence {
         adjectives.add("hairy");
     }
 
-public String generateSentence() {
-    Random randWord = new Random();
+public StringBuilder generateSentence() {
 
     String wordNoun = nouns.get(randWord.nextInt(nouns.size()));
     String wordVerb = verbs.get(randWord.nextInt(verbs.size()));
@@ -42,7 +42,7 @@ public String generateSentence() {
     String wordArticle2 = articles.get(randWord.nextInt(articles.size()));
     String wordAdjective = adjectives.get(randWord.nextInt(adjectives.size()));
     String wordAdjective2 = adjectives.get(randWord.nextInt(adjectives.size()));
-    return wordArticle + " " +wordAdjective  + " " + wordNoun + " " + wordVerb + " " + wordPrep + " " + wordArticle2 + " " +wordAdjective2+" "+ wordNoun2;
+    return new StringBuilder().append(wordArticle).append(" ").append(wordAdjective).append(" ").append(wordNoun).append(" ").append(wordVerb).append(" ").append(wordPrep).append(" ").append(wordArticle2).append(" ").append(wordAdjective2).append(" ").append(wordNoun2);
 }
     public void setNouns(ArrayList<String> nouns) {
         this.nouns = nouns;
@@ -60,11 +60,6 @@ public String generateSentence() {
         this.adjectives = adjectives;
     }
 
-    public String getString(){
-        StringBuilder sentence = new StringBuilder();
-        sentence.append(this.articles).append(" ").append(this.nouns).append(" ").append(this.verbs).append(" ").append(this.prepositions).append(" ").append(this.articles).append(" ").append(this.nouns);
-        return sentence.toString();
-    }
 
     public void addNoun(String noun) {
         nouns.add(noun);
