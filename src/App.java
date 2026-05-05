@@ -43,7 +43,7 @@ public class App extends JFrame {
         mainFrame.add(centralPanel);
 
         JPanel bottomPanel = new JPanel();
-        JLabel Instructions = new JLabel("Enter Your New Word or word you want to remove in the Text Box to the above");
+        JLabel Instructions = new JLabel("Enter Your New Word or word you want to remove in the Text Box above");
         bottomPanel.add(Instructions);
         mainFrame.add(bottomPanel);
 
