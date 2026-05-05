@@ -29,12 +29,12 @@ public class App extends JFrame {
         mainFrame.add(sentencePanel);
 
         JPanel topPanel2 = new JPanel();
-        JButton addButton = new JButton ("Add");
-        topPanel2.add(addButton);
+        JButton addWordButton = new JButton ("Add");
+        topPanel2.add(addWordButton);
         mainFrame.add(topPanel2);
 
-        JButton removeButton = new JButton ("Remove");
-        topPanel2.add(removeButton);
+        JButton removeWordButton = new JButton ("Remove");
+        topPanel2.add(removeWordButton);
 
 
         JPanel centralPanel = new JPanel();
@@ -56,7 +56,7 @@ public class App extends JFrame {
         topPanel2.add(cb);
 
 
-        addButton.addActionListener(new ActionListener() {
+        addWordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
@@ -76,7 +76,7 @@ public class App extends JFrame {
             }
         });
 
-        removeButton.addActionListener(new ActionListener() {
+        removeWordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
