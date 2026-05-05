@@ -65,9 +65,9 @@ public class App extends JFrame {
                     if (selectedChoice.equals("Noun")) {
                         rs.addNoun(newWord);
                     } else if (selectedChoice.equals("Verb")) {
-                        //rs.addVerb(newWord);
+                        rs.addVerb(newWord);
                     } else if (selectedChoice.equals("Adjective")) {
-                        //rs.addAdjective(newWord);
+                        rs.addAdjective(newWord);
                     }
                     Instructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
                     } catch (Exception exept) {
