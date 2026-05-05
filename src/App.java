@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 import javax.swing.*;
 
 
@@ -15,8 +14,7 @@ public class App extends JFrame {
         Color lightBlue = new Color(173, 216, 230);
         mainFrame.setBackground(lightBlue);
 
-        RandomSentence rs = new RandomSentence();// initializes the RandomSentence class to use its methods for sentence generation and word management
-
+        RandomSentence rs = new RandomSentence();// sets the RandomSentence class to use.
 
         mainFrame.setLayout(new GridLayout(5, 5, 10, 10)); // (rows, cols, hgap, vgap)
 
@@ -38,6 +36,9 @@ public class App extends JFrame {
         JButton removeButton = new JButton ("Remove");
         topPanel2.add(removeButton);
 
+        JButton viewButton = new JButton ("View Words");
+        topPanel2.add(viewButton);
+
 
         JPanel centralPanel = new JPanel();
         JTextField WTypePanel = new JTextField(10);
@@ -45,7 +46,7 @@ public class App extends JFrame {
         mainFrame.add(centralPanel);
 
         JPanel bottomPanel = new JPanel();
-        JLabel Instructions = new JLabel("Enter Your New Word or word you want to remove in the Text Box to the above");
+        JLabel Instructions = new JLabel("Enter Your New Word or word you want to remove in the Text Box above");
         bottomPanel.add(Instructions);
         mainFrame.add(bottomPanel);
 
@@ -68,7 +69,7 @@ public class App extends JFrame {
                     numberCheck(newWord);
                     duplicateCheck(rs, newWord, selectedChoice);
 
-                     if (selectedChoice.equals("Noun")) {
+                    if (selectedChoice.equals("Noun")) {
                         rs.addNoun(newWord);
                     } else if (selectedChoice.equals("Verb")) {
                         rs.addVerb(newWord);
@@ -76,12 +77,29 @@ public class App extends JFrame {
                         rs.addAdjective(newWord);
                     }
                     Instructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
-                    } catch (Exception exept) {
+                } catch (Exception exept) {
                     JOptionPane.showMessageDialog(mainFrame, "Error: " + exept.getMessage()); // updates the message on the label with an error message
-            }
+                }
             }
         });
-      
+
+        viewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    String selectedChoice = (String) cb.getSelectedItem();
+                    if (selectedChoice.equals("Noun")) {
+                        JOptionPane.showMessageDialog(mainFrame, "list of nouns: " + rs.getNoun()); // updates the message on the label
+                    } else if (selectedChoice.equals("Verb")) {
+                        JOptionPane.showMessageDialog(mainFrame, "the list of verbs: " + rs.getVerb()); // updates the message on the label
+                    } else if (selectedChoice.equals("Adjective")) {
+                        JOptionPane.showMessageDialog(mainFrame, "the list of adjectives: " + rs.getAdjective()); // updates the message on the label
+                    }
+                }catch (Exception exept) {
+                JOptionPane.showMessageDialog(mainFrame, "Error: " + exept.getMessage());
+                }
+            }
+        });
     
 
         removeButton.addActionListener(new ActionListener() {
@@ -122,22 +140,23 @@ public class App extends JFrame {
         mainFrame.setVisible(true); // this must be the last statement
         }
 
-          public static void numberCheck(String newWord){
-             if(newWord.matches(".*\\d.*")){
-                        throw new IllegalArgumentException("Numbers are not allowed!");
+    public static void numberCheck(String newWord){
+        if(newWord.matches(".*\\d.*")){
+            throw new IllegalArgumentException("Numbers are not allowed!");
         }
-        }
-        public static void duplicateCheck(RandomSentence rs, String word, String type) {
+    }
+
+    public static void duplicateCheck(RandomSentence rs, String word, String type) {
 
         ArrayList<String> list;
 
-            if (type.equals("Noun")) {
-                list = rs.getNoun();
-            } else if (type.equals("Verb")) {
-                list = rs.getVerb();
-            } else {
-                list = rs.getAdjective();
-            }
+        if (type.equals("Noun")) {
+            list = rs.getNoun();
+        } else if (type.equals("Verb")) {
+            list = rs.getVerb();
+        } else {
+            list = rs.getAdjective();
+        }
 
             for (String w : list) {
                 if (w.equalsIgnoreCase(word)) {
@@ -145,9 +164,8 @@ public class App extends JFrame {
                 }
             }
     }
-      
 }
 
-  
+
 //JOptionPane.showMessageDialog(null, "Your Sentence is: " + newSentence);
 //showMessageDialog(null, "Your Sentence is: " + newSentence); for error message

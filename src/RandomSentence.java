@@ -42,7 +42,7 @@ public StringBuilder generateSentence() {
     String wordArticle2 = articles.get(randWord.nextInt(articles.size()));
     String wordAdjective = adjectives.get(randWord.nextInt(adjectives.size()));
     String wordAdjective2 = adjectives.get(randWord.nextInt(adjectives.size()));
-    return new StringBuilder().append(wordArticle).append(" ").append(wordAdjective).append(" ").append(wordNoun).append(" ").append(wordVerb).append(" ").append(wordPrep).append(" ").append(wordArticle2).append(" ").append(wordAdjective2).append(" ").append(wordNoun2);
+    return new StringBuilder().append(wordArticle).append(" ").append(wordAdjective).append(" ").append(wordNoun).append(" ").append(wordVerb).append(" ").append(wordPrep).append(" ").append(wordArticle2).append(" ").append(wordAdjective2).append(" ").append(wordNoun2).append(".");
 }
     public void setNouns(ArrayList<String> nouns) {
         this.nouns = nouns;
@@ -75,6 +75,14 @@ public StringBuilder generateSentence() {
     public void removeNoun(String noun) {
         nouns.remove(noun);
     }
+
+    public void removeVerb(String verb) {
+        verbs.remove(verb);
+    }
+
+    public void removeAdjective(String adjective) {
+        adjectives.remove(adjective);
+    }
     public ArrayList<String> getNoun() {
         return nouns;
     }
@@ -89,6 +97,10 @@ public StringBuilder generateSentence() {
 
     public ArrayList<String> getPreposition() {
         return prepositions;
+    }
+
+    public ArrayList<String> getAdjective() {
+        return adjectives;
     }
 
 }
