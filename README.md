@@ -2,7 +2,7 @@
 ### Author: Vince Vella
 ### Author: Dane Andreasen
 
-Welcome to Dane and Vince's Random Sentence Generator
+Welcome to Dane and Vince's Random Sentence Generator.
 
 ## Project Structure
 
