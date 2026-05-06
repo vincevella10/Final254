@@ -28,6 +28,6 @@ This project is a Java GUI application that generates random sentences using use
 <img width="261" height="604" alt="RealFinalProjectUML drawio" src="https://github.com/user-attachments/assets/4a9a4a7e-3c76-4261-904c-cdba67628a48" />
 
 
-<img width="959" height="565" alt="GUI_FinalProject_VinceVella" src="https://github.com/user-attachments/assets/0ae8941d-744a-4e27-9b46-a98602584fc3" />
+<img width="959" height="565" alt="final project ss" src="https://github.com/user-attachments/assets/95bf0e05-92b5-4ccc-b769-0ab048c87847" />
 
 
