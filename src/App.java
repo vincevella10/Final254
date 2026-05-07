@@ -78,7 +78,7 @@ public class App extends JFrame {
                     }
                     Instructions.setText(newWord + " (" + selectedChoice + ") has been added"); // updates the message on the label
                 } catch (Exception exept) {
-                    JOptionPane.showMessageDialog(mainFrame, "Error: " + exept.getMessage()); // updates the message on the label with an error message
+                    JOptionPane.showMessageDialog(mainFrame, "Error: " + exept.getMessage()); // opens a new window with an error message showing exception
                 }
             }
         });
@@ -119,8 +119,8 @@ public class App extends JFrame {
                         //rs.removeAdjective(newWord);
                     }
                     Instructions.setText(newWord + " (" + selectedChoice + ") has been removed"); // updates the message on the label
-                    } catch (ArrayIndexOutOfBoundsException exept) {
-                        JOptionPane.showMessageDialog(mainFrame, "Error: Please enter a valid word to remove."); // updates the message on the label with an error message
+                    } catch (Exception exept) {
+                         JOptionPane.showMessageDialog(mainFrame, "Error: " + exept.getMessage()); // updates the message on the label with an error message
                 }
             }
         });
