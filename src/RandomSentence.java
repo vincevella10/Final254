@@ -19,16 +19,24 @@ public class RandomSentence {
         // Initialize the lists with some default words
         nouns.add("kid");
         nouns.add("worker");
+        nouns.add("fishermen");
+        nouns.add("pterodactyl");
         nouns.add("monkey");
         verbs.add("jumps");
+        verbs.add("shaves");
         verbs.add("looks");
         articles.add("the");
         articles.add("a");
         prepositions.add("over");
         prepositions.add("under");
+        prepositions.add("off");
+        prepositions.add("around");
         prepositions.add("on top of");
         adjectives.add("happy");
+        adjectives.add("bald");
         adjectives.add("sad");
+        adjectives.add("nerdy");
+        adjectives.add("boneheaded");
         adjectives.add("hairy");
     }
 
