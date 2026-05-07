@@ -4,8 +4,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.*;
 
-
+/**
+ * Description: This is the App class which creates the GUI for the Random Sentence Generator. It allows users to generate random sentences, add new words to the lists, view the current lists of words, and remove words from the lists. The GUI is built using Java Swing components and includes error handling for invalid input.
+ * Author: Vince Vela
+ * @Author Dane Andreasen
+ * @Since 4/23/2026
+ */
 public class App extends JFrame {
+
+    /**
+     * Description: This is the main method of the program which makes a GUI for the Random sentence generator.
+     * @Param: args the command line arguments
+     * @Throws: Exception if there is an error with the GUI components or the RandomSentence class methods
+     */
     public static void main(String[] args) throws Exception {
         JFrame mainFrame = new JFrame();
         mainFrame.setTitle("Welcome to Dane and Vince's Random Sentence Generator!");
@@ -114,9 +125,9 @@ public class App extends JFrame {
                     if (selectedChoice.equals("Noun")) {
                         rs.removeNoun(newWord);
                     } else if (selectedChoice.equals("Verb")) {
-                        //rs.removeVerb(newWord);
+                        rs.removeVerb(newWord);
                     } else if (selectedChoice.equals("Adjective")) {
-                        //rs.removeAdjective(newWord);
+                        rs.removeAdjective(newWord);
                     }
                     Instructions.setText(newWord + " (" + selectedChoice + ") has been removed"); // updates the message on the label
                     } catch (Exception exept) {
@@ -127,10 +138,14 @@ public class App extends JFrame {
         GenerateButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                StringBuilder newSentence = rs.generateSentence(); // generates a new sentence using the RandomSentence class
-                sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
-            }
-        });
+                    try{
+                        StringBuilder newSentence = rs.generateSentence(); // generates a new sentence using the RandomSentence class
+                        sentenceLabel.setText("Your Sentence is: " + newSentence); // updates the message on the label
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(mainFrame, "Error: No words left to generate a sentence.");
+                    }
+                }
+            });
         mainFrame.getContentPane().setBackground(lightBlue);
         topPanel.setBackground(lightBlue);
         topPanel2.setBackground(lightBlue);
@@ -145,7 +160,12 @@ public class App extends JFrame {
             throw new IllegalArgumentException("Numbers are not allowed!");
         }
     }
-
+    /**
+     * Description: This method checks for duplicate words in the lists before adding a new word. It takes in the RandomSentence object, the new word to be added, and the type of word (Noun, Verb, or Adjective) as parameters. It throws an IllegalArgumentException if the word already exists in the corresponding list.
+     * @Param: rs the RandomSentence object to access the lists of words
+     * @Param: word the new word to be added
+     * @Param: type the type of word (Noun, Verb, or Adjective)
+     */
     public static void duplicateCheck(RandomSentence rs, String word, String type) {
 
         ArrayList<String> list;
