@@ -121,6 +121,7 @@ public class App extends JFrame {
                     String newWord = WTypePanel.getText(); // gets the text from the TextField component
 
                     numberCheck(newWord);
+                    nonWordCheck(rs, newWord, selectedChoice);
                     
                     if (selectedChoice.equals("Noun")) {
                         rs.removeNoun(newWord);
@@ -155,6 +156,12 @@ public class App extends JFrame {
         mainFrame.setVisible(true); // this must be the last statement
         }
 
+    
+    /**
+     * Description: This method checks for numbers in the input word. It takes in the new word as a parameter and uses a regular expression to check if it contains any digits. If it does, it throws an IllegalArgumentException with a message indicating that numbers are not allowed.
+     * @Param: newWord the new word to be checked for numbers
+     * @Throws: IllegalArgumentException if the new word contains any digits
+    */
     public static void numberCheck(String newWord){
         if(newWord.matches(".*\\d.*")){
             throw new IllegalArgumentException("Numbers are not allowed!");
@@ -183,6 +190,36 @@ public class App extends JFrame {
                     throw new IllegalArgumentException(type + " already exists!");
                 }
             }
+    }
+
+    /**
+     * Description: This method checks if the input word exists in the corresponding list. It takes in the RandomSentence object, the new word to be checked, and the type of word (Noun, Verb, or Adjective) as parameters. If the word does not exist, it throws an IllegalArgumentException with a message indicating that the word does not exist.
+     * @Param: rs the RandomSentence object to access the lists of words
+     * @Param: newWord the new word to be checked for existence
+     * @Param: type the type of word (Noun, Verb, or Adjective)
+     * @Throws: IllegalArgumentException if the new word does not exist in the corresponding list
+     */
+    public static void nonWordCheck(RandomSentence rs, String newWord, String type) { //need to fix does not
+
+        ArrayList<String> list;
+
+        if (type.equals("Noun")) {
+            list = rs.getNoun();
+        } else if (type.equals("Verb")) {
+            list = rs.getVerb();
+        } else {
+            list = rs.getAdjective();
+        }
+        Boolean found = false;
+        for(int i = 0; i < list.size(); i++) {
+                if (list.get(i).equalsIgnoreCase(newWord)) {
+                    found = true;
+                    break;
+                }
+            }
+        if (!found) {
+        throw new IllegalArgumentException(type + " does not exist");
+    }
     }
 }
 
