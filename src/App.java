@@ -121,7 +121,6 @@ public class App extends JFrame {
                     String newWord = WTypePanel.getText(); // gets the text from the TextField component
 
                     numberCheck(newWord);
-                    nonWordCheck(rs, newWord, selectedChoice);
                     
                     if (selectedChoice.equals("Noun")) {
                         rs.removeNoun(newWord);
@@ -220,6 +219,24 @@ public class App extends JFrame {
         if (!found) {
         throw new IllegalArgumentException(type + " does not exist");
     }
+    }
+    public static void nonWordCheck(RandomSentence rs, String word, String type) {
+
+        ArrayList<String> list;
+
+        if (type.equals("Noun")) {
+            list = rs.getNoun();
+        } else if (type.equals("Verb")) {
+            list = rs.getVerb();
+        } else {
+            list = rs.getAdjective();
+        }
+
+            for (String w : list) {
+                if (!w.equalsIgnoreCase(word)) {
+                    throw new IllegalArgumentException(type + " does not exist");
+                }
+            }
     }
 }
 

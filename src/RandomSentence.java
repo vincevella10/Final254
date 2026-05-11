@@ -27,10 +27,13 @@ public class RandomSentence {
         // Initialize the lists with some default words
         nouns.add("kid");
         nouns.add("worker");
+        nouns.add("fishermen");
+        nouns.add("pterodactyl");
         nouns.add("monkey");
         nouns.add("man");
         nouns.add("dog");
         verbs.add("jumps");
+        verbs.add("shaves");
         verbs.add("looks");
         verbs.add("runs");
         verbs.add("eats");
@@ -39,6 +42,8 @@ public class RandomSentence {
         articles.add("a");
         prepositions.add("over");
         prepositions.add("under");
+        prepositions.add("off");
+        prepositions.add("around");
         prepositions.add("on top of");
         prepositions.add("next to");
         prepositions.add("near");
@@ -49,10 +54,9 @@ public class RandomSentence {
         prepositions.add("around");
         prepositions.add("near");
         adjectives.add("happy");
+        adjectives.add("bald");
         adjectives.add("sad");
-        adjectives.add("angry");
-        adjectives.add("excited");
-        adjectives.add("sleepy");
+        adjectives.add("hairy");
     }
 
 public StringBuilder generateSentence() {
