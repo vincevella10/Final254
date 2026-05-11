@@ -159,9 +159,15 @@ public class App extends JFrame {
     
     /**
      * Description: This method checks for numbers in the input word. It takes in the new word as a parameter and uses a regular expression to check if it contains any digits. If it does, it throws an IllegalArgumentException with a message indicating that numbers are not allowed.
+<<<<<<< HEAD
      * @Param newWord the new word to be checked for numbers
      * @Throws IllegalArgumentException if the new word contains any digits
      */
+=======
+     * @Param: newWord the new word to be checked for numbers
+     * @Throws: IllegalArgumentException if the new word contains any digits
+    */
+>>>>>>> e9a047ea823590dcdff13894f3d05d15fef6c49d
     public static void numberCheck(String newWord){
         if(newWord.matches(".*\\d.*")){
             throw new IllegalArgumentException("Numbers are not allowed!");
@@ -192,6 +198,7 @@ public class App extends JFrame {
                 }
             }
     }
+<<<<<<< HEAD
     /**
      * Description: This method checks if the word to be removed exists in the corresponding list before attempting to remove it. It takes in the RandomSentence object, the word to be removed, and the type of word (Noun, Verb, or Adjective) as parameters. It throws an IllegalArgumentException if the word does not exist in the corresponding list.
      * @Param rs the RandomSentence object to access the lists of words
@@ -199,6 +206,8 @@ public class App extends JFrame {
      * @Param type the type of word (Noun, Verb, or Adjective)
      * @Throws IllegalArgumentException if the word does not exist in the corresponding list
      */
+=======
+>>>>>>> e9a047ea823590dcdff13894f3d05d15fef6c49d
     public static void nonWordCheck(RandomSentence rs, String newWord, String type) { //need to fix does not
 
         ArrayList<String> list;
