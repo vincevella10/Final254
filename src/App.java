@@ -121,7 +121,7 @@ public class App extends JFrame {
                     String newWord = WTypePanel.getText(); // gets the text from the TextField component
 
                     numberCheck(newWord);
-                    nonWordCheck(rs, newWord, newWord);
+                    nonWordCheck(rs, newWord, selectedChoice);
                     
                     if (selectedChoice.equals("Noun")) {
                         rs.removeNoun(newWord);
@@ -156,6 +156,12 @@ public class App extends JFrame {
         mainFrame.setVisible(true); // this must be the last statement
         }
 
+    
+    /**
+     * Description: This method checks for numbers in the input word. It takes in the new word as a parameter and uses a regular expression to check if it contains any digits. If it does, it throws an IllegalArgumentException with a message indicating that numbers are not allowed.
+     * @Param: newWord the new word to be checked for numbers
+     * @Throws: IllegalArgumentException if the new word contains any digits
+    */
     public static void numberCheck(String newWord){
         if(newWord.matches(".*\\d.*")){
             throw new IllegalArgumentException("Numbers are not allowed!");
@@ -185,7 +191,7 @@ public class App extends JFrame {
                 }
             }
     }
-    public static void nonWordCheck(RandomSentence rs, String word, String type) {
+    public static void nonWordCheck(RandomSentence rs, String newWord, String type) { //need to fix does not
 
         ArrayList<String> list;
 
@@ -196,12 +202,16 @@ public class App extends JFrame {
         } else {
             list = rs.getAdjective();
         }
-
-            for (String w : list) {
-                if (!w.equalsIgnoreCase(word)) {
-                    throw new IllegalArgumentException(type + " does not exist");
+        Boolean found = false;
+        for(int i = 0; i < list.size(); i++) {
+                if (list.get(i).equalsIgnoreCase(newWord)) {
+                    found = true;
+                    break;
                 }
             }
+        if (!found) {
+        throw new IllegalArgumentException(type + " does not exist");
+    }
     }
 }
 
