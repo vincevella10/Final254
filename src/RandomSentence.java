@@ -36,7 +36,6 @@ public class RandomSentence {
         nouns.add("man");
         nouns.add("dog");
         verbs.add("jumps");
-        verbs.add("shaves");
         verbs.add("looks");
         verbs.add("runs");
         verbs.add("eats");
@@ -54,17 +53,16 @@ public class RandomSentence {
         prepositions.add("from");
         prepositions.add("by");
         prepositions.add("towards");
-        prepositions.add("around");
-        prepositions.add("near");
         adjectives.add("happy");
         adjectives.add("bald");
         adjectives.add("sad");
-        adjectives.add("hairy");
+        adjectives.add("angry");
+        adjectives.add("sleepy");
     }
 
     /**
      * Description: This method generates a random sentence using the words in the lists.
-     * @Return StringBuilder the generated sentence
+     * @return StringBuilder the generated sentence
      */
     public StringBuilder generateSentence() {
 
@@ -82,7 +80,7 @@ public class RandomSentence {
 
     /**
      * Description: This method sets the list of nouns.
-     * @Param nouns the list of nouns to be set
+     * @param nouns the list of nouns to be set
      */
     public void setNouns(ArrayList<String> nouns) {
         this.nouns = nouns;
@@ -90,15 +88,15 @@ public class RandomSentence {
 
     /**
      * Description: This method sets the list of verbs.
-     * @Param verbs the list of verbs to be set
+     * @param verbs the list of verbs to be set
      */
-    public void setVerbs(ArrayList<String> verb) {
-        this.verbs = verb;
+    public void setVerbs(ArrayList<String> verbs) {
+        this.verbs = verbs;
     }
 
     /**
      * Description: This method sets the list of articles.
-     * @Param articles the list of articles to be set
+     * @param articles the list of articles to be set
      */
     public void setArticles(ArrayList<String> articles) {
         this.articles = articles;
@@ -106,7 +104,7 @@ public class RandomSentence {
 
     /**
      * Description: This method sets the list of prepositions.
-     * @Param prepositions the list of prepositions to be set
+     * @param prepositions the list of prepositions to be set
      */
     public void setPrepositions(ArrayList<String> prepositions) {
         this.prepositions = prepositions;
@@ -114,7 +112,7 @@ public class RandomSentence {
 
     /**
      * Description: This method sets the list of adjectives.
-     * @Param adjectives the list of adjectives to be set
+     * @param adjectives the list of adjectives to be set
      */
     public void setAdjectives(ArrayList<String> adjectives) {
         this.adjectives = adjectives;
@@ -170,14 +168,14 @@ public class RandomSentence {
 
     /**
      * Description: This method returns the list of nouns. getter for nouns.
-     * @Return ArrayList<String> the list of nouns
+     * @return ArrayList<String> the list of nouns
      */
     public ArrayList<String> getNoun() {
         return nouns;
     }
     /**
      * Description: This method returns the list of verbs. getter for verbs.
-     * @Return ArrayList<String> the list of verbs
+     * @return ArrayList<String> the list of verbs
      */
     public ArrayList<String> getVerb() {
         return verbs;
@@ -185,7 +183,7 @@ public class RandomSentence {
 
     /**
      * Description: This method returns the list of articles. getter for articles.
-     * @Return ArrayList<String> the list of articles
+     * @return ArrayList<String> the list of articles
      */
     public ArrayList<String> getArticle() {
         return articles;
@@ -193,7 +191,7 @@ public class RandomSentence {
 
     /**
      * Description: This method returns the list of prepositions. getter for prepositions.
-     * @Return ArrayList<String> the list of prepositions
+     * @return ArrayList<String> the list of prepositions
      */
     public ArrayList<String> getPreposition() {
         return prepositions;
@@ -201,7 +199,7 @@ public class RandomSentence {
 
     /**
      * Description: This method returns the list of adjectives. getter for adjectives.
-     * @Return ArrayList<String> the list of adjectives
+     * @return ArrayList<String> the list of adjectives
      */
     public ArrayList<String> getAdjective() {
         return adjectives;
