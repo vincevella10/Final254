@@ -6,7 +6,7 @@ import javax.swing.*;
 
 /**
  * Description: This is the App class which creates the GUI for the Random Sentence Generator. It allows users to generate random sentences, add new words to the lists, view the current lists of words, and remove words from the lists. The GUI is built using Java Swing components and includes error handling for invalid input.
- * Author: Vince Vela
+ * @Author Vince Vela
  * @Author Dane Andreasen
  * @Since 4/23/2026
  */
@@ -14,8 +14,8 @@ public class App extends JFrame {
 
     /**
      * Description: This is the main method of the program which makes a GUI for the Random sentence generator.
-     * @Param: args the command line arguments
-     * @Throws: Exception if there is an error with the GUI components or the RandomSentence class methods
+     * @Param args the command line arguments
+     * @Throws Exception if there is an error with the GUI components or the RandomSentence class methods
      */
     public static void main(String[] args) throws Exception {
         JFrame mainFrame = new JFrame();
@@ -121,6 +121,7 @@ public class App extends JFrame {
                     String newWord = WTypePanel.getText(); // gets the text from the TextField component
 
                     numberCheck(newWord);
+                    nonWordCheck(rs, newWord, selectedChoice);
                     
                     if (selectedChoice.equals("Noun")) {
                         rs.removeNoun(newWord);
@@ -158,9 +159,9 @@ public class App extends JFrame {
     
     /**
      * Description: This method checks for numbers in the input word. It takes in the new word as a parameter and uses a regular expression to check if it contains any digits. If it does, it throws an IllegalArgumentException with a message indicating that numbers are not allowed.
-     * @Param: newWord the new word to be checked for numbers
-     * @Throws: IllegalArgumentException if the new word contains any digits
-    */
+     * @Param newWord the new word to be checked for numbers
+     * @Throws IllegalArgumentException if the new word contains any digits
+     */
     public static void numberCheck(String newWord){
         if(newWord.matches(".*\\d.*")){
             throw new IllegalArgumentException("Numbers are not allowed!");
@@ -168,9 +169,10 @@ public class App extends JFrame {
     }
     /**
      * Description: This method checks for duplicate words in the lists before adding a new word. It takes in the RandomSentence object, the new word to be added, and the type of word (Noun, Verb, or Adjective) as parameters. It throws an IllegalArgumentException if the word already exists in the corresponding list.
-     * @Param: rs the RandomSentence object to access the lists of words
-     * @Param: word the new word to be added
-     * @Param: type the type of word (Noun, Verb, or Adjective)
+     * @Param rs the RandomSentence object to access the lists of words
+     * @Param word the new word to be added
+     * @Param type the type of word (Noun, Verb, or Adjective)
+     * @Throws IllegalArgumentException if the word already exists in the corresponding list
      */
     public static void duplicateCheck(RandomSentence rs, String word, String type) {
 
@@ -190,13 +192,12 @@ public class App extends JFrame {
                 }
             }
     }
-
     /**
-     * Description: This method checks if the input word exists in the corresponding list. It takes in the RandomSentence object, the new word to be checked, and the type of word (Noun, Verb, or Adjective) as parameters. If the word does not exist, it throws an IllegalArgumentException with a message indicating that the word does not exist.
-     * @Param: rs the RandomSentence object to access the lists of words
-     * @Param: newWord the new word to be checked for existence
-     * @Param: type the type of word (Noun, Verb, or Adjective)
-     * @Throws: IllegalArgumentException if the new word does not exist in the corresponding list
+     * Description: This method checks if the word to be removed exists in the corresponding list before attempting to remove it. It takes in the RandomSentence object, the word to be removed, and the type of word (Noun, Verb, or Adjective) as parameters. It throws an IllegalArgumentException if the word does not exist in the corresponding list.
+     * @Param rs the RandomSentence object to access the lists of words
+     * @Param word the word to be removed
+     * @Param type the type of word (Noun, Verb, or Adjective)
+     * @Throws IllegalArgumentException if the word does not exist in the corresponding list
      */
     public static void nonWordCheck(RandomSentence rs, String newWord, String type) { //need to fix does not
 
@@ -219,24 +220,6 @@ public class App extends JFrame {
         if (!found) {
         throw new IllegalArgumentException(type + " does not exist");
     }
-    }
-    public static void nonWordCheck(RandomSentence rs, String word, String type) {
-
-        ArrayList<String> list;
-
-        if (type.equals("Noun")) {
-            list = rs.getNoun();
-        } else if (type.equals("Verb")) {
-            list = rs.getVerb();
-        } else {
-            list = rs.getAdjective();
-        }
-
-            for (String w : list) {
-                if (!w.equalsIgnoreCase(word)) {
-                    throw new IllegalArgumentException(type + " does not exist");
-                }
-            }
     }
 }
 
