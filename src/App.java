@@ -6,9 +6,9 @@ import javax.swing.*;
 
 /**
  * Description: This is the App class which creates the GUI for the Random Sentence Generator. It allows users to generate random sentences, add new words to the lists, view the current lists of words, and remove words from the lists. The GUI is built using Java Swing components and includes error handling for invalid input.
- * @Author Vince Vela
- * @Author Dane Andreasen
- * @Since 4/23/2026
+ * @author Vince Vela
+ * @author Dane Andreasen
+ * @since 4/23/2026
  */
 public class App extends JFrame {
 
