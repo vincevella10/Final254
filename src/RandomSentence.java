@@ -4,9 +4,9 @@ import java.util.Random;
 
 /**
  * Description: This is the RandomSentence class which contains the methods for generating random sentences, adding new words to the lists, viewing the current words, and removing words from the lists.
- * @Author: Vince Vella
- * @Author Dane Andreasen
- * @Since 4/23/2026
+ * @author: Vince Vella
+ * @author Dane Andreasen
+ * @since 4/23/2026
  */
 public class RandomSentence {
     
